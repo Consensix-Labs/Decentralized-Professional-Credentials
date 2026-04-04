@@ -2,7 +2,7 @@
 
 A chain-agnostic protocol for W3C Verifiable Credentials with proof-of-concept implementations on Ethereum and IOTA. Issuers create signed credentials off-chain following the W3C VC Data Model v2.0. Credential hashes are anchored on-chain for tamper-proof verification and transparent revocation. Holders control their credentials. Verifiers check authenticity by validating the issuer's signature and confirming on-chain status.
 
-For a full discussion of the concept, architecture, and results, see the [research paper](https://consensixlabs.com/research/decentralized-credentials/Decentralized-Professional-Credentials.pdf).
+For a full discussion of the concept, architecture, and results, see the [research paper](https://consensixlabs.com/research/decentralized-professional-credentials/Decentralized-Professional-Credentials.pdf).
 
 ## Prerequisites
 
