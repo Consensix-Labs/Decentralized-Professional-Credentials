@@ -1,0 +1,8 @@
+.env
+__pycache__/
+*.pyc
+contracts/iota/build/
+contracts/iota/Move.lock
+credentials/
+keys/
+reports/

@@ -1,0 +1,9 @@
+[package]
+name = "credential_registry"
+edition = "2024.beta"
+
+[dependencies]
+Iota = { git = "https://github.com/iotaledger/iota.git", subdir = "crates/iota-framework/packages/iota-framework", rev = "v1.1.0" }
+
+[addresses]
+credential_registry = "0x0"

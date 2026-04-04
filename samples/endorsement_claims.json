@@ -1,0 +1,23 @@
+[
+  {
+    "endorserName": "Bob Martinez",
+    "relationship": "colleague",
+    "skills": ["distributed systems", "technical leadership"],
+    "statement": "Worked with Alice on the payment platform migration. She led the architecture redesign and mentored two junior engineers through the transition.",
+    "context": "Payment Platform Migration, Acme Corp, 2023"
+  },
+  {
+    "endorserName": "Carol Chen",
+    "relationship": "manager",
+    "skills": ["system design", "cross-team collaboration"],
+    "statement": "Alice consistently delivered high-quality architecture proposals and was the go-to person for cross-team technical alignment.",
+    "context": "Platform Infrastructure Team, Acme Corp, 2022-2024"
+  },
+  {
+    "endorserName": "Dave Wilson",
+    "relationship": "collaborator",
+    "skills": ["API design", "documentation"],
+    "statement": "Collaborated with Alice on the public API redesign. Her documentation standards became the team template.",
+    "context": "API Redesign Project, Acme Corp, 2023"
+  }
+]

@@ -1,0 +1,43 @@
+services:
+  cred:
+    build: .
+    env_file: .env
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      # Persist credentials, keys, and reports on the host
+      - ./credentials:/app/credentials
+      - ./keys:/app/keys
+      - ./reports:/app/reports
+      # Mount contract source so rebuilds pick up changes without rebuilding the image
+      - ./contracts:/app/contracts:ro
+
+  # API server for the web interface
+  # (started with: docker compose --profile ui up)
+  api:
+    build: .
+    entrypoint: ["uvicorn", "api:app", "--host", "0.0.0.0", "--port", "8000"]
+    profiles:
+      - ui
+    ports:
+      - "8000:8000"
+    env_file: .env
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ./credentials:/app/credentials
+      - ./keys:/app/keys
+      - ./contracts:/app/contracts:ro
+
+  # React web interface served via nginx
+  # (started with: docker compose --profile ui up)
+  web:
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+    profiles:
+      - ui
+    ports:
+      - "3000:80"
+    depends_on:
+      - api

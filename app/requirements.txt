@@ -1,0 +1,10 @@
+click>=8.1
+PyJWT>=2.8
+cryptography>=42.0
+web3>=6.15
+py-solc-x>=2.0
+base58>=2.1
+bech32>=1.2
+requests>=2.31
+fastapi>=0.115
+uvicorn>=0.34
