@@ -142,14 +142,11 @@ def _get_public_key_bytes(private_key):
 def _get_address(private_key):
     """Derive the IOTA address from an Ed25519 private key.
 
-    IOTA addresses are the Blake2b-256 hash of the scheme flag byte (0x00 for
-    Ed25519) followed by the 32-byte public key, making 33 bytes total.
-    Returns a 0x-prefixed hex string.
+    The address is the Blake2b-256 hash of the raw 32-byte public key. IOTA
+    Rebased uses no scheme-flag prefix here (unlike Sui). Returns 0x-prefixed hex.
     """
     pub_bytes = _get_public_key_bytes(private_key)
-    # Prepend the Ed25519 scheme flag so derived addresses match the IOTA CLI/SDK
-    flag_and_key = b"\x00" + pub_bytes
-    address_bytes = hashlib.blake2b(flag_and_key, digest_size=32).digest()
+    address_bytes = hashlib.blake2b(pub_bytes, digest_size=32).digest()
     return "0x" + address_bytes.hex()
 
 
